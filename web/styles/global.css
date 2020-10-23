@@ -1,0 +1,49 @@
+@import '~/styles/variables.css';
+
+::selection {
+	background: rgba(0, 0, 0, 0.99);
+	color: rgb(255, 255, 255);
+}
+::-moz-selection {
+	background: rgba(0, 0, 0, 0.99);
+	color: rgb(255, 255, 255);
+}
+
+html {
+	font-size: 16px;
+	line-height: 16px;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	box-sizing: border-box;
+	background: #181818;
+}
+
+body {
+	font-family: var(--font-family-sans);
+	font-size: 1rem;
+	font-weight: 400;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 16px;
+	word-spacing: 1px;
+	background: var(--color-white);
+	color: var(--color-black);
+}
+
+/* layout */
+#__layout > div {
+	min-height: 100vh;
+}
+
+.main-article {
+	padding: 1rem;
+}
+
+/* text */
+
+a {
+	color: black;
+	text-decoration: none;
+}

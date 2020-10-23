@@ -1,0 +1,29 @@
+/* brand-colors */
+:root {
+	--brand-primary: #33f76d;
+	--brand-secondary: #2fa7a4;
+	--brand-dark: #000000;
+	--brand-light: #ffffff;
+	/* Htg Fläche */
+	--component-bg: white;
+	/* default Button publish */
+	--default-button-success-color: var(--brand-primary);
+	/* default buttons */
+	--default-button-color: var(--brand-primary);
+	--default-button-color--hover: var(--brand-primary);
+	--default-button-primary-color: var(--brand-primary);
+}
+
+/* globals */
+:root {
+	--selectable-item-base: var(--brand-primary);
+	--main-navigation-color: color(var(--brand-light));
+	--default-button-primary-color: var(--brand-primary);
+	--text-selection-color: color(var(--brand-primary));
+}
+
+/* typography */
+:root {
+	--link-color: var(--brand-primary);
+	--link-hover-color: var(--brand-secondary);
+}

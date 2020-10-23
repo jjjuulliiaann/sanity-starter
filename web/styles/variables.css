@@ -1,0 +1,35 @@
+:root {
+	--font-family-sans: -apple-system, BlinkMacSystemFont, sans-serif;
+
+	--color-black: rgb(0, 0, 0);
+	--color-white: rgb(255, 255, 255);
+	--color-accent: #33f76d;
+
+	/* Typography */
+	--font-size-00: 0.8rem;
+	--font-size-01: 1rem;
+	--font-size-02: 1.4rem;
+	--font-size-03: 2rem;
+	--font-size-04: 4rem;
+
+	--font-line-height-00: 1rem;
+	--font-line-height-01: 1.125rem;
+	--font-line-height-02: 1.5rem;
+	--font-line-height-03: 2rem;
+	--font-line-height-04: 4rem;
+
+	/* Units */
+	--unit-01: 0.2rem;
+	--unit-02: 0.5rem;
+	--unit-03: 1rem;
+	--unit-04: 2rem;
+	--unit-05: 4rem;
+	--unit-06: 10rem;
+	--unit-07: 20rem;
+	--unit-08: 40rem;
+}
+
+@custom-media --media-min-phablet (min-width: 450px);
+@custom-media --media-min-tablet (min-width: 700px);
+@custom-media --media-min-desktop (min-width: 1000px);
+@custom-media --media-min-desktop-hd (min-width: 1400px);
