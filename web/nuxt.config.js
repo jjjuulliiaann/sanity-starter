@@ -32,6 +32,11 @@ export default {
 				name: 'theme-color',
 				content: '#ffffff',
 			},
+			{
+				property: 'og:image',
+				content:
+					'https://1e9-conference-2020.netlify.app/favicons/sharing.jpg',
+			},
 		],
 		link: [
 			{
@@ -178,5 +183,6 @@ export default {
 		projectId: 'vnxsnwyh',
 		dataset: 'production',
 		withCredentials: true,
+		useCdn: true,
 	},
 }
