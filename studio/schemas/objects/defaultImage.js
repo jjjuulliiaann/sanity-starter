@@ -3,32 +3,33 @@ export default {
   title: 'Image',
   type: 'image',
   options: {
-    hotspot: true
+    hotspot: true,
+    metadata: ['lqip'],
   },
   fields: [
     {
-      title: 'Bildunterschrift',
+      title: 'Image Caption',
       name: 'caption',
       type: 'string',
       options: {
-        isHighlighted: true
-      }
+        isHighlighted: true,
+      },
     },
     {
       name: 'alt',
       type: 'string',
-      title: 'Alternativtext',
-      validation: Rule => Rule.error('You have to fill out the alternative text.').required(),
-      description: 'Wichtig für SEO und Barrierefreiheit.',
+      title: 'Alternate Text',
+      validation: (Rule) => Rule.error('You have to fill out the alternative text.').required(),
+      description: 'Important for SEO and Accessibility.',
       options: {
-        isHighlighted: true
-      }
-    }
+        isHighlighted: true,
+      },
+    },
   ],
   preview: {
     select: {
       imageUrl: 'asset.url',
-      title: 'caption'
-    }
-  }
+      title: 'caption',
+    },
+  },
 }

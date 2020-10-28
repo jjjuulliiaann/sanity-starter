@@ -6,6 +6,8 @@
 			:width="width"
 			:height="height"
 			:alt="alt"
+			:auto="auto"
+			:fit="fit"
 		/>
 		<figcaption :v-if="figcaption">{{ figcaption }}</figcaption>
 	</figure>
@@ -53,6 +55,6 @@ export default {
 
 <style scoped>
 figure {
-	position: relative;
+	display: block;
 }
 </style>

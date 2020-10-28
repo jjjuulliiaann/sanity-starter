@@ -1,6 +1,6 @@
 <template>
 	<img
-		:src="placeholder"
+		:src="lqip"
 		:data-src="imageSrc"
 		:data-srcset="imageSrcSet"
 		:alt="alt"
@@ -40,30 +40,21 @@ export default {
 		},
 	},
 	computed: {
-		placeholder() {
-			// check if image should get cropped
-			if (this.width && this.height) {
-				const ratio = this.width / this.height
-				return this.$builder
-					.image(this.asset)
-					.size(50, 50 / ratio)
-					.auto(this.auto)
-					.fit(this.fit)
-			} else {
-				return this.$builder
-					.image(this.asset)
-					.width(50)
-					.auto(this.auto)
-					.fit(this.fit)
+		lqip() {
+			if (this.asset.metadata) {
+				if (this.asset.metadata.lqip) {
+					return this.asset.metadata.lqip
+				}
 			}
+			return undefined
 		},
 		imageSrc() {
 			// check if image should get cropped
 			if (this.width && this.height) {
-				const ratio = this.width / this.height
+				const ratio = (this.width / this.height).toFixed(2)
 				return this.$builder
 					.image(this.asset)
-					.size(this.width, this.width / ratio)
+					.size(this.width, Math.floor(this.width / ratio))
 					.auto(this.auto)
 					.fit(this.fit)
 			} else {
@@ -80,13 +71,13 @@ export default {
 
 			// check if image should get cropped
 			if (this.width && this.height) {
-				const ratio = this.width / this.height
+				const ratio = (this.width / this.height).toFixed(2)
 
 				widths.forEach((width, index) => {
 					srcSet +=
 						this.$builder
 							.image(this.asset)
-							.size(width, width / ratio)
+							.size(width, Math.floor(width / ratio))
 							.auto(this.auto)
 							.fit(this.fit) + ` ${width}w`
 					if (index + 1 !== widths.length) {
@@ -111,14 +102,22 @@ export default {
 			return srcSet
 		},
 		imageWidth() {
-			return this.width
-				? this.width
-				: this.asset.metadata.dimensions.width
+			if (this.width) {
+				return this.width
+			}
+			if (this.asset.metadata) {
+				return this.asset.metadata.dimensions.width
+			}
+			return undefined
 		},
 		imageHeight() {
-			return this.height
-				? this.height
-				: this.asset.metadata.dimensions.height
+			if (this.height) {
+				return this.height
+			}
+			if (this.asset.metadata) {
+				return this.asset.metadata.dimensions.height
+			}
+			return undefined
 		},
 	},
 }
