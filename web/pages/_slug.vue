@@ -92,6 +92,7 @@ export default {
 			},
 		}
 	},
+
 	transition: {
 		css: false,
 		beforeEnter(el) {
@@ -112,6 +113,7 @@ export default {
 			})
 		},
 	},
+
 	head() {
 		return {
 			title: this.title,

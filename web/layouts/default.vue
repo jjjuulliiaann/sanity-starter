@@ -46,7 +46,7 @@ export default {
 	head() {
 		return {
 			titleTemplate: (title) =>
-				title === '' || title === 'sanity-nuxt-template'
+				title === '' || title === '…'
 					? this.pageOptions.name
 					: `${this.pageOptions.name} – ${title}`,
 			meta: [

@@ -22,6 +22,12 @@ export default {
 			pageOptions: this.$store.getters.getPageOptions,
 		}
 	},
+
+	head() {
+		return {
+			title: this.pageOptions.name,
+		}
+	},
 }
 </script>
 
